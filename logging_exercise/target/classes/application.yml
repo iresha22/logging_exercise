@@ -1,0 +1,34 @@
+
+# aggiungere valori custom
+custom:
+  value1: 2
+  value2: 8
+
+# logging configuration
+logging:
+  level:
+    root: INFO
+    com:
+      example:
+        service: DEBUG
+  file:
+    name: myCustomLogs/reservation-app.log
+    pattern:
+      console: "%clr(%d{yyyy-MM-dd HH:mm:ss}){faint} %clr(%5p) %clr([%t]){cyan} %clr(%-40.40logger{39}){yellow} : %m%n%wEx"
+      file: "%d{yyyy-MM-dd HH:mm:ss} %5p [%t] %-40.40logger{39} : %m%n%wEx"
+
+# enabling ANSI
+
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/devdb
+    username: root
+    password: Madu7788?
+  jpa:
+    database: mysql
+    show_sql: true
+    hibernate:
+      ddl-auto: create-drop
